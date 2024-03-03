@@ -1,33 +1,30 @@
-# A phrase is a palindrome if, after converting all uppercase letters into lowercase letters and removing all non-alphanumeric characters, it reads the same forward and backward. Alphanumeric characters include letters and numbers.
+# Given a non-empty array of integers nums, every element appears twice except for one. Find that single one.
 
-# Given a string s, return true if it is a palindrome, or false otherwise.
+# You must implement a solution with a linear runtime complexity and use only constant extra space.
 
  
 
 # Example 1:
 
-# Input: s = "A man, a plan, a canal: Panama"
-# Output: true
-# Explanation: "amanaplanacanalpanama" is a palindrome.
+# Input: nums = [2,2,1]
+# Output: 1
 # Example 2:
 
-# Input: s = "race a car"
-# Output: false
-# Explanation: "raceacar" is not a palindrome.
+# Input: nums = [4,1,2,1,2]
+# Output: 4
 # Example 3:
 
-# Input: s = " "
-# Output: true
-# Explanation: s is an empty string "" after removing non-alphanumeric characters.
-# Since an empty string reads the same forward and backward, it is a palindrome.
+# Input: nums = [1]
+# Output: 1
 
 
 # Solution
 
 class Solution:
-    def isPalindrome(self, s: str) -> bool:
-        s = ''.join(e for e in s if e.isalnum()).lower()
-        return s==s[::-1]
-
+    def singleNumber(self, nums: list[int]) -> int:
+        
+        for i in nums:
+            if nums.count(i)==1:
+                return i
 solution1 = Solution()
-print(solution1.isPalindrome(s = " "))
+print(solution1.singleNumber([1]))
